@@ -24,4 +24,9 @@ public class Meeting extends AbstractEvent{
     public void print() {
         System.out.printf("[회의] %s : %s%n" , getTitle(), agenda);
     }
+
+    @Override
+    public boolean support(EventType type) {
+        return type == EventType.MEETING; // 타입이 이벤트타입의 미팅과 동일한지 확인
+    }
 }
